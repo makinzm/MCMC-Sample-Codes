@@ -3,6 +3,8 @@
 #include <math.h>
 #include <time.h>
 
+// gcc three_sphere.c -lm
+
 int main(void){
   int niter=100000;
   srand((unsigned)time(NULL)); 
@@ -13,6 +15,13 @@ int main(void){
   /*************/
   /* Main loop */
   /*************/
+
+  /*
+  
+  V/8 = \int_D \sqrt(1 - x^2 - y^2) dx dy
+      = [\int \sqrt(1 - x^2 - y^2) dP] * 1/dP # dP が離散の場合
+
+  */
   for(int iter=1;iter<niter+1;iter++){
 
     double x = (double)rand()/RAND_MAX;
@@ -22,5 +31,10 @@ int main(void){
       double z=sqrt(1e0-x*x-y*y);
       sum_z=sum_z+z;
     }
-    printf("%d   %.10f\n",iter,sum_z/n_in*2e0*pi);}
+
+    if((iter%10000==0)|((iter<500))&(iter%10==1)){
+      printf("%d   %.10f\n",iter,sum_z/n_in*(2e0*pi));
+    }
+  
+  }
 }
