@@ -6,7 +6,6 @@ sh docker.sh
 
 - c,cppの環境について以下を参考に構築します.
     - [DockerでAtCoderができる環境を作る【Python・C++】](https://qiita.com/hinamimi/items/b3dd159f956628cebdbb)
-    - (可視化を実装するため,update予定です)
 
 ## c
 
