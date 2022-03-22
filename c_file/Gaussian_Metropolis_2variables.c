@@ -11,6 +11,9 @@ int main(void){
   srand((unsigned)time(NULL)); 
 
   /*********************************/
+  /* In more complicated cases, 
+    the difference from 0 becomes large and 
+    the over lap problem appears.  */
   /* Set the initial configuration */
   /*********************************/      
   double x=0e0;

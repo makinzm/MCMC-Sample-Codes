@@ -10,7 +10,7 @@ sh docker.sh
 ## c
 
 ```
-gcc sth.c
+gcc sth.c -lm
 ./a.out
 ```
 
