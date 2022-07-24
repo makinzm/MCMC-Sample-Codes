@@ -4,14 +4,14 @@ ARG DEBIAN_FRONTEND=noninteractive
 ENV TZ=Asia/Tokyo
 
 RUN apt-get update && \
-    apt-get install -y zsh time tzdata tree git curl
-
-RUN apt-get update && \
-    apt-get install -y gcc-9 g++-9 vim
+    apt-get install -y gcc-9 g++-9 vim && apt-get install -y make
 
 RUN update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-9 30 && \
     update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-9 30 
 
+ADD .exrc /root/
+
 WORKDIR /root/files
 
 CMD bash
+
